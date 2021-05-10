@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Drawable_Learning</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="bitmap_drawable">BitmapDrawable</string>
+    <string name="shape_drawable">ShapeDrawable</string>
+    <string name="gradient_drawable">GradientDrawable</string>
+    <string name="vector_drawable">VectorDrawable</string>
+    <string name="transition_drawable">TransitionDrawable</string>
+    <string name="scale_drawable">ScaleDrawable</string>
+    <string name="animation_drawable">AnimationDrawable</string>
+    <string name="custom_drawable">Custom Drawable</string>
+
+</resources>

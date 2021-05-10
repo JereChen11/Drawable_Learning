@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transition xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:drawable="@drawable/vector_drawable_icon_ship"
+        android:id="@+id/ship"
+        android:left="0dp" />
+
+    <item
+        android:drawable="@drawable/vector_drawable_icon_plane"
+        android:id="@+id/plane"
+        android:left="50dp" />
+
+<!--    <item-->
+<!--        android:drawable="@drawable/vector_drawable_icon_trucks"-->
+<!--        android:left="100dp" />-->
+
+</transition>
