@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TransitionDrawableFragment">
+    tools:context=".ClipDrawableFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -15,13 +15,11 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <TextView
-        android:id="@+id/transitionDrawableTv"
+        android:id="@+id/clipDrawableTv"
         android:layout_width="300dp"
         android:layout_height="200dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/transition_drawable"
-        android:gravity="center_horizontal"
-        android:text="@string/transition_drawable"
+        android:background="@drawable/clip_drawable"
+        android:text="@string/clip_drawable"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline"
@@ -29,13 +27,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10000"
+        android:progress="2000"
+        app:layout_constraintBottom_toBottomOf="@id/guideline" />
+
     <TextView
-        android:id="@+id/transitionDrawableTv2"
+        android:id="@+id/clipDrawableTv2"
         android:layout_width="300dp"
         android:layout_height="200dp"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal"
-        android:text="@string/transition_drawable"
+        android:text="@string/clip_drawable"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

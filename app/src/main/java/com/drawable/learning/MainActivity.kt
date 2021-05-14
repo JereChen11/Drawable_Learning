@@ -26,9 +26,10 @@ class MainActivity : AppCompatActivity() {
             "GradientDrawable",
             "ScaleDrawable",
             "TransitionDrawable",
-            "VectorDrawable",
-            "ScaleDrawable",
+            "InsetDrawable",
+            "ClipDrawable",
             "AnimationDrawable",
+            "VectorDrawable",
             "Custom Drawable"
         )
 
@@ -54,9 +55,9 @@ class MainActivity : AppCompatActivity() {
                 2 -> GradientDrawableFragment()
                 3 -> ScaleDrawableFragment()
                 4 -> TransitionDrawableFragment()
-//                1 -> TransitionDrawableFragment()
-//                2 -> GradientDrawableFragment()
-//                3 -> VectorDrawableFragment()
+                5 -> InsetDrawableFragment()
+                6 -> ClipDrawableFragment()
+                7 -> AnimationDrawableFragment()
                 else -> CustomDrawableFragment()
             }
         }

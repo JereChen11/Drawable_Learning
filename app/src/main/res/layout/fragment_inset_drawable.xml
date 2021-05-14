@@ -5,24 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TransitionDrawableFragment">
+    tools:context=".InsetDrawableFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/black"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
     <TextView
-        android:id="@+id/transitionDrawableTv"
+        android:id="@+id/insetDrawableTv"
         android:layout_width="300dp"
         android:layout_height="200dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/transition_drawable"
+        android:background="@drawable/inset_drawable"
         android:gravity="center_horizontal"
-        android:text="@string/transition_drawable"
-        android:textColor="@color/white"
+        android:text="@string/inset_drawable"
+        android:textColor="@color/teal_200"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,13 +30,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/transitionDrawableTv2"
+        android:id="@+id/insetDrawableTv2"
         android:layout_width="300dp"
         android:layout_height="200dp"
-        android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
-        android:text="@string/transition_drawable"
-        android:textColor="@color/white"
+        android:text="@string/inset_drawable"
+        android:textColor="@color/teal_200"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
