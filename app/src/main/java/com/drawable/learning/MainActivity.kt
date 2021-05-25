@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
                 5 -> InsetDrawableFragment()
                 6 -> ClipDrawableFragment()
                 7 -> AnimationDrawableFragment()
+                8 -> VectorDrawableFragment()
                 else -> CustomDrawableFragment()
             }
         }
