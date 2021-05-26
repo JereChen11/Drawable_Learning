@@ -11,3 +11,12 @@ val Float.px: Float
             Resources.getSystem().displayMetrics
         )
     }
+
+val Int.px: Int
+    get() {
+        return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            this.toFloat(),
+            Resources.getSystem().displayMetrics
+        ).toInt()
+    }

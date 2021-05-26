@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".VectorDrawableFragment">
+    tools:context=".AnimatedVectorDrawableFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -13,30 +13,23 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
 
-    <TextView
-        android:id="@+id/vectorDrawableTv"
+    <ImageView
+        android:id="@+id/vectorDrawableIv"
         android:layout_width="300dp"
         android:layout_height="200dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/vector_drawable_icon_trucks"
-        android:gravity="center_horizontal"
-        android:text="@string/vector_drawable"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+        android:background="@color/light_blue"
+        android:src="@drawable/animated_vector_drawable"
         app:layout_constraintBottom_toBottomOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/vectorDrawableTv2"
+    <ImageView
+        android:id="@+id/vectorDrawableIv2"
         android:layout_width="300dp"
         android:layout_height="200dp"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal"
-        android:text="@string/vector_drawable"
-        android:textColor="@color/black"
-        android:textSize="20sp"
+        android:background="@color/light_blue"
+        android:src="@drawable/vector_drawable_icon_trucks"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

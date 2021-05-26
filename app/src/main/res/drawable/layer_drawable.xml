@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap android:src="@drawable/nick" />
+    </item>
+    <item
+        android:bottom="150dp"
+        android:left="0dp"
+        android:right="250dp"
+        android:top="0dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/royal_blue" />
+        </shape>
+    </item>
+    <item
+        android:bottom="75dp"
+        android:left="125dp"
+        android:right="125dp"
+        android:top="75dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/indian_red" />
+        </shape>
+    </item>
+    <item
+        android:bottom="0dp"
+        android:left="250dp"
+        android:right="0dp"
+        android:top="150dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/yellow" />
+        </shape>
+    </item>
+
+</layer-list>

@@ -11,7 +11,23 @@ import com.google.android.material.tabs.TabLayoutMediator
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
+    private val tabList by lazy {
+        listOf(
+            getString(R.string.bitmap_drawable),
+            getString(R.string.shape_drawable),
+            getString(R.string.gradient_drawable),
+            getString(R.string.layer_drawable),
+            getString(R.string.state_list_drawable),
+            getString(R.string.level_list_drawable),
+            getString(R.string.scale_drawable),
+            getString(R.string.transition_drawable),
+            getString(R.string.inset_drawable),
+            getString(R.string.clip_drawable),
+            getString(R.string.animation_drawable),
+            getString(R.string.animated_vector_drawable),
+            getString(R.string.custom_drawable)
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,48 +35,43 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        val tabList = listOf(
-            "BitmapDrawable",
-            "ShapeDrawable",
-            "GradientDrawable",
-            "ScaleDrawable",
-            "TransitionDrawable",
-            "InsetDrawable",
-            "ClipDrawable",
-            "AnimationDrawable",
-            "VectorDrawable",
-            "Custom Drawable"
-        )
-
         binding.vp.adapter = VpAdapter(this, tabList)
 
         TabLayoutMediator(binding.tabLayout, binding.vp) { tab, position ->
             tab.text = tabList[position]
         }.attach()
+
+        binding.vp.currentItem = tabList.size - 1
     }
 
 
     class VpAdapter(
-        activity: FragmentActivity,
+        private val activity: FragmentActivity,
         private val tabList: List<String>
     ) : FragmentStateAdapter(activity) {
 
         override fun getItemCount() = tabList.size
 
         override fun createFragment(position: Int): Fragment {
-            return when (position) {
-                0 -> BitmapDrawableFragment()
-                1 -> ShapeDrawableFragment()
-                2 -> GradientDrawableFragment()
-                3 -> ScaleDrawableFragment()
-                4 -> TransitionDrawableFragment()
-                5 -> InsetDrawableFragment()
-                6 -> ClipDrawableFragment()
-                7 -> AnimationDrawableFragment()
-                8 -> VectorDrawableFragment()
-                else -> CustomDrawableFragment()
+
+            activity.apply {
+                return when (tabList[position]) {
+                    getString(R.string.bitmap_drawable) -> BitmapDrawableFragment()
+                    getString(R.string.shape_drawable) -> ShapeDrawableFragment()
+                    getString(R.string.gradient_drawable) -> GradientDrawableFragment()
+                    getString(R.string.layer_drawable) -> LayerDrawableFragment()
+                    getString(R.string.state_list_drawable) -> StateListDrawableFragment()
+                    getString(R.string.level_list_drawable) -> LevelListDrawableFragment()
+                    getString(R.string.scale_drawable) -> ScaleDrawableFragment()
+                    getString(R.string.transition_drawable) -> TransitionDrawableFragment()
+                    getString(R.string.inset_drawable) -> InsetDrawableFragment()
+                    getString(R.string.clip_drawable) -> ClipDrawableFragment()
+                    getString(R.string.animation_drawable) -> AnimationDrawableFragment()
+                    getString(R.string.animated_vector_drawable) -> AnimatedVectorDrawableFragment()
+                    else -> CustomDrawableFragment()
+                }
             }
+
         }
 
     }
