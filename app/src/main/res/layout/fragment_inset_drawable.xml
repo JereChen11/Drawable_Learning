@@ -1,45 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".InsetDrawableFragment">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/black"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
-
-    <TextView
-        android:id="@+id/insetDrawableTv"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:background="@drawable/inset_drawable"
-        android:gravity="center_horizontal"
-        android:text="@string/inset_drawable"
-        android:textColor="@color/teal_200"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/insetDrawableTv2"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:gravity="center_horizontal"
-        android:text="@string/inset_drawable"
-        android:textColor="@color/teal_200"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline" />
+    <include
+        android:id="@+id/insetDrawableInclude"
+        layout="@layout/include_tv_show" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,19 +1,32 @@
 package com.drawable.learning
 
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.DashPathEffect
+import android.graphics.Paint
 import android.graphics.drawable.ShapeDrawable
 import android.graphics.drawable.shapes.RoundRectShape
 import android.graphics.drawable.shapes.Shape
+import androidx.core.content.ContextCompat
 import com.drawable.learning.databinding.FragmentShapeDrawableBinding
 
 
 class ShapeDrawableFragment : BaseFragment<FragmentShapeDrawableBinding>() {
 
     override fun initView() {
+        binding.shapeDrawableInclude.apply {
+            tv1.setText(R.string.shape_drawable)
+            tv1.background = ContextCompat.getDrawable(context!!, R.drawable.shape_drawable)
+            tv2.setText(R.string.shape_drawable)
 
-        val roundRectShape =
-            RoundRectShape(floatArrayOf(20f.px, 20f.px, 20f.px, 20f.px, 0f, 0f, 0f, 0f), null, null)
-        binding.shapeDrawableTv2.background = MyShapeDrawable(roundRectShape)
+            val roundRectShape =
+                RoundRectShape(
+                    floatArrayOf(20f.px, 20f.px, 20f.px, 20f.px, 0f, 0f, 0f, 0f),
+                    null,
+                    null
+                )
+            tv2.background = MyShapeDrawable(roundRectShape)
+        }
     }
 
     /**

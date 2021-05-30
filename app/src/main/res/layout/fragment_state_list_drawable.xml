@@ -25,15 +25,10 @@
 
     <TextView
         android:id="@+id/stateListDrawableTv"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center_horizontal"
+        style="@style/MyStyle"
         android:background="@drawable/state_list_drawble"
         android:enabled="true"
-        android:gravity="center_horizontal"
         android:text="@string/state_list_drawable"
-        android:textColor="@color/white"
-        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,14 +46,9 @@
 
     <TextView
         android:id="@+id/stateListDrawableTv2"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center_horizontal"
+        style="@style/MyStyle"
         android:enabled="true"
-        android:gravity="center_horizontal"
         android:text="@string/state_list_drawable"
-        android:textColor="@color/white"
-        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

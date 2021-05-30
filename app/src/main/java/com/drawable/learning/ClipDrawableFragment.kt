@@ -9,7 +9,9 @@ import com.drawable.learning.databinding.FragmentClipDrawableBinding
 
 class ClipDrawableFragment : BaseFragment<FragmentClipDrawableBinding>() {
 
-    private lateinit var clipDrawable: ClipDrawable
+    private val clipDrawable by lazy {
+        ContextCompat.getDrawable(context!!, R.drawable.clip_drawable)
+    }
     private val manualClipDrawable by lazy {
         ClipDrawable(
             ContextCompat.getDrawable(context!!, R.drawable.nick),
@@ -19,13 +21,17 @@ class ClipDrawableFragment : BaseFragment<FragmentClipDrawableBinding>() {
     }
 
     override fun initView() {
-        clipDrawable = binding.clipDrawableTv.background as ClipDrawable
-        binding.clipDrawableTv2.background = manualClipDrawable
+        binding.clipDrawableInclude.apply {
+            tv1.setText(R.string.clip_drawable)
+            tv1.background = clipDrawable
+            tv2.setText(R.string.clip_drawable)
+            tv2.background = manualClipDrawable
+        }
 
         //level 默认级别为 0，即完全裁剪，使图像不可见。当级别为 10,000 时，图像不会裁剪，而是完全可见。
         binding.seekBar.apply {
             //init level
-            clipDrawable.level = progress
+            clipDrawable?.level = progress
             manualClipDrawable.level = progress
             //add listener
             setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
@@ -34,7 +40,7 @@ class ClipDrawableFragment : BaseFragment<FragmentClipDrawableBinding>() {
                     progress: Int,
                     fromUser: Boolean
                 ) {
-                    clipDrawable.level = progress
+                    clipDrawable?.level = progress
                     manualClipDrawable.level = progress
                 }
 
