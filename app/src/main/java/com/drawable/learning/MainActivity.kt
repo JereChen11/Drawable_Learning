@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.drawable.learning.custom.ball.MoveBallFragment
 import com.drawable.learning.custom.line_chart.LineChartFragment
 import com.drawable.learning.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
@@ -26,7 +27,8 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.clip_drawable),
             getString(R.string.animation_drawable),
             getString(R.string.animated_vector_drawable),
-            getString(R.string.custom_drawable)
+            getString(R.string.custom_drawable_1),
+            getString(R.string.custom_drawable_2)
         )
     }
 
@@ -69,7 +71,8 @@ class MainActivity : AppCompatActivity() {
                     getString(R.string.clip_drawable) -> ClipDrawableFragment()
                     getString(R.string.animation_drawable) -> AnimationDrawableFragment()
                     getString(R.string.animated_vector_drawable) -> AnimatedVectorDrawableFragment()
-                    else -> LineChartFragment()
+                    getString(R.string.custom_drawable_1) -> LineChartFragment()
+                    else -> MoveBallFragment()
                 }
             }
 

@@ -15,8 +15,11 @@
     <string name="animation_drawable">AnimationDrawable</string>
     <string name="inset_drawable">InsetDrawable</string>
     <string name="clip_drawable">ClipDrawable</string>
-    <string name="custom_drawable">Custom Drawable</string>
+    <string name="custom_drawable_1">Custom Drawable 1</string>
+    <string name="custom_drawable_2">Custom Drawable 2</string>
     <string name="line_chart">Line Chart</string>
+
+    <string name="try_click_screen">please try to click the screen \n you will see the moving ball</string>
 
     <string name="click_the_image">Click the image to see the effect</string>
 
