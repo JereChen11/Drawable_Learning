@@ -1,12 +1,17 @@
-package com.drawable.learning.custom
+package com.drawable.learning.custom.line_chart
 
 import android.graphics.*
 import android.graphics.drawable.Drawable
 import com.drawable.learning.BaseFragment
-import com.drawable.learning.databinding.FragmentCustomDrawableBinding
+import com.drawable.learning.databinding.FragmentLineChartBinding
 import com.drawable.learning.px
 
-class CustomDrawableFragment : BaseFragment<FragmentCustomDrawableBinding>() {
+/**
+ * @author jere
+ *
+ * drawing line chart
+ */
+class LineChartFragment : BaseFragment<FragmentLineChartBinding>() {
     override fun initView() {
         binding.customDrawableTv.apply {
             background = MyDrawable()
@@ -14,7 +19,7 @@ class CustomDrawableFragment : BaseFragment<FragmentCustomDrawableBinding>() {
     }
 
     class MyDrawable : Drawable() {
-        private val bgDrawable = BgDrawable()
+        private val bgDrawable = BgGridDrawable()
 
         private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
             style = Paint.Style.FILL
@@ -35,6 +40,7 @@ class CustomDrawableFragment : BaseFragment<FragmentCustomDrawableBinding>() {
             bgDrawable.bounds = bounds
             bgDrawable.draw(canvas)
 
+            //hard code the points of the line chart
             val path = Path().apply {
                 moveTo(bounds.left.toFloat(), bounds.bottom.toFloat())
                 lineTo(bounds.left.toFloat(), 150f)
@@ -56,10 +62,17 @@ class CustomDrawableFragment : BaseFragment<FragmentCustomDrawableBinding>() {
                 lineTo(bounds.right.toFloat(), 320f)
                 lineTo(bounds.right.toFloat(), bounds.bottom.toFloat())
             }
+            paint.apply {
+                style = Paint.Style.STROKE
+                strokeWidth = 2f.px
+                color = Color.WHITE
+            }
+            canvas.drawPath(path, paint)
+
+            //draw the shader for path
             path.close()
             paint.apply {
-                style = Paint.Style.FILL_AND_STROKE
-                strokeWidth = 2f.px
+                style = Paint.Style.FILL
                 shader = LinearGradient(
                     bounds.left.toFloat(), bounds.top.toFloat(),
                     bounds.left.toFloat(), bounds.bottom.toFloat(),

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custom.CustomDrawableFragment">
+    tools:context=".custom.line_chart.LineChartFragment">
 
     <TextView
         android:id="@+id/customDrawableTv"
@@ -13,7 +13,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
         android:gravity="center_horizontal"
-        android:text="@string/custom_drawable"
+        android:text="@string/line_chart"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

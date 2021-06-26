@@ -16,6 +16,7 @@
     <string name="inset_drawable">InsetDrawable</string>
     <string name="clip_drawable">ClipDrawable</string>
     <string name="custom_drawable">Custom Drawable</string>
+    <string name="line_chart">Line Chart</string>
 
     <string name="click_the_image">Click the image to see the effect</string>
 
