@@ -4,6 +4,9 @@ import android.graphics.*
 import android.graphics.drawable.Drawable
 import com.drawable.learning.px
 
+/**
+ * @author jere
+ */
 class BallDrawable : Drawable() {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL

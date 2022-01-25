@@ -1,5 +1,6 @@
 package com.drawable.learning.custom.ball
 
+import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Context
 import android.graphics.Canvas
@@ -7,8 +8,8 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Path
 import android.util.AttributeSet
+import android.view.Gravity
 import android.view.MotionEvent
-import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.FrameLayout
 import android.widget.ImageView
 import com.drawable.learning.px
@@ -21,10 +22,13 @@ class SiteFrameLayout(context: Context, attributeSet: AttributeSet?, defStyleAtt
 
     private lateinit var ballContainerIv: ImageView
     private val ballDrawable = BallDrawable()
+    private val radius = 50
 
     private var rippleAlpha = 0
     private var rippleRadius = 10f
 
+    private var rawTouchEventX = 0f
+    private var rawTouchEventY = 0f
     private var touchEventX = 0f
     private var touchEventY = 0f
     private var lastTouchEventX = 0f
@@ -45,7 +49,10 @@ class SiteFrameLayout(context: Context, attributeSet: AttributeSet?, defStyleAtt
     private fun initView(context: Context, attributeSet: AttributeSet?) {
 
         ballContainerIv = ImageView(context).apply {
-            layoutParams = LayoutParams(100, 100)
+            layoutParams = LayoutParams(radius * 2, radius * 2).apply {
+                gravity = Gravity.CENTER
+            }
+
             setImageDrawable(ballDrawable)
             //setBackgroundColor(Color.BLUE)
         }
@@ -59,8 +66,10 @@ class SiteFrameLayout(context: Context, attributeSet: AttributeSet?, defStyleAtt
         lastTouchEventY = touchEventY
 
         event?.let {
-            touchEventX = it.x
-            touchEventY = it.y
+            rawTouchEventX = it.x
+            rawTouchEventY = it.y
+            touchEventX = it.x - radius
+            touchEventY = it.y - radius
         }
 
         ObjectAnimator.ofFloat(this, "rippleValue", 0f, 1f).apply {
@@ -78,9 +87,12 @@ class SiteFrameLayout(context: Context, attributeSet: AttributeSet?, defStyleAtt
             )
         }
 
-        ObjectAnimator.ofFloat(ballContainerIv, "x", "y", path).apply {
+        val oaMoving = ObjectAnimator.ofFloat(ballContainerIv, "x", "y", path)
+        val oaRotating = ObjectAnimator.ofFloat(ballContainerIv, "rotation", 0f, 360f)
+
+        AnimatorSet().apply {
             duration = 1000
-            interpolator = AccelerateDecelerateInterpolator()
+            playTogether(oaMoving, oaRotating)
             start()
         }
 
@@ -88,7 +100,7 @@ class SiteFrameLayout(context: Context, attributeSet: AttributeSet?, defStyleAtt
     }
 
     fun setRippleValue(currentValue: Float) {
-        rippleRadius = currentValue * 30f.px
+        rippleRadius = currentValue * radius
         rippleAlpha = ((1 - currentValue) * 255).toInt()
         invalidate()
     }
@@ -97,6 +109,6 @@ class SiteFrameLayout(context: Context, attributeSet: AttributeSet?, defStyleAtt
         super.onDraw(canvas)
         ripplePaint.alpha = rippleAlpha
         //draw ripple for click event
-        canvas?.drawCircle(touchEventX, touchEventY, rippleRadius, ripplePaint)
+        canvas?.drawCircle(rawTouchEventX, rawTouchEventY, rippleRadius, ripplePaint)
     }
 }
