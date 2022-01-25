@@ -1,4 +1,4 @@
-package com.drawable.learning
+package com.drawable.learning.fragment
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
@@ -6,6 +6,9 @@ import android.animation.ValueAnimator
 import android.graphics.drawable.Animatable
 import com.drawable.learning.databinding.FragmentAnimatedVectorDrawableBinding
 
+/**
+ * @author jere
+ */
 class AnimatedVectorDrawableFragment : BaseFragment<FragmentAnimatedVectorDrawableBinding>() {
     override fun initView() {
         (binding.vectorDrawableIv.drawable as Animatable).start()

@@ -1,12 +1,16 @@
-package com.drawable.learning
+package com.drawable.learning.fragment
 
 
 import android.graphics.drawable.ClipDrawable
 import android.view.Gravity
 import android.widget.SeekBar
 import androidx.core.content.ContextCompat
+import com.drawable.learning.R
 import com.drawable.learning.databinding.FragmentClipDrawableBinding
 
+/**
+ * @author jere
+ */
 class ClipDrawableFragment : BaseFragment<FragmentClipDrawableBinding>() {
 
     private val clipDrawable by lazy {

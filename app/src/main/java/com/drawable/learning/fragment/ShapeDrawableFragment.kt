@@ -1,4 +1,4 @@
-package com.drawable.learning
+package com.drawable.learning.fragment
 
 import android.graphics.Canvas
 import android.graphics.Color
@@ -8,9 +8,13 @@ import android.graphics.drawable.ShapeDrawable
 import android.graphics.drawable.shapes.RoundRectShape
 import android.graphics.drawable.shapes.Shape
 import androidx.core.content.ContextCompat
+import com.drawable.learning.R
 import com.drawable.learning.databinding.FragmentShapeDrawableBinding
+import com.drawable.learning.tools.px
 
-
+/**
+ * @author jere
+ */
 class ShapeDrawableFragment : BaseFragment<FragmentShapeDrawableBinding>() {
 
     override fun initView() {

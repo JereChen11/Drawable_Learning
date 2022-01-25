@@ -1,11 +1,15 @@
-package com.drawable.learning
+package com.drawable.learning.fragment
 
 import android.graphics.drawable.InsetDrawable
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
+import com.drawable.learning.R
 import com.drawable.learning.databinding.FragmentInsetDrawableBinding
 
+/**
+ * @author jere
+ */
 class InsetDrawableFragment : BaseFragment<FragmentInsetDrawableBinding>() {
 
     @RequiresApi(Build.VERSION_CODES.O)

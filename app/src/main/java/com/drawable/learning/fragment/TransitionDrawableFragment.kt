@@ -1,9 +1,13 @@
-package com.drawable.learning
+package com.drawable.learning.fragment
 
 import android.graphics.drawable.TransitionDrawable
 import androidx.core.content.ContextCompat
+import com.drawable.learning.R
 import com.drawable.learning.databinding.FragmentTransitionDrawableBinding
 
+/**
+ * @author jere
+ */
 class TransitionDrawableFragment : BaseFragment<FragmentTransitionDrawableBinding>() {
 
     private var isShow = false

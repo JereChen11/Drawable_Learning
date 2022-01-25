@@ -1,8 +1,8 @@
-package com.drawable.learning.custom.ball
+package com.drawable.learning.fragment.custom.ball
 
 import android.graphics.*
 import android.graphics.drawable.Drawable
-import com.drawable.learning.px
+import com.drawable.learning.tools.px
 
 /**
  * @author jere

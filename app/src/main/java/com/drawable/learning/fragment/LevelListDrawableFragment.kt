@@ -1,12 +1,15 @@
-package com.drawable.learning
+package com.drawable.learning.fragment
 
 import android.graphics.drawable.LevelListDrawable
 import android.util.Log
 import android.widget.SeekBar
 import androidx.core.content.ContextCompat
+import com.drawable.learning.R
 import com.drawable.learning.databinding.FragmentLevelListDrawableBinding
 
-
+/**
+ * @author jere
+ */
 class LevelListDrawableFragment : BaseFragment<FragmentLevelListDrawableBinding>() {
 
     private val lld by lazy {

@@ -1,12 +1,17 @@
-package com.drawable.learning
+package com.drawable.learning.fragment
 
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
+import com.drawable.learning.R
 import com.drawable.learning.databinding.FragmentGradientDrawableBinding
+import com.drawable.learning.tools.px
 
+/**
+ * @author jere
+ */
 class GradientDrawableFragment : BaseFragment<FragmentGradientDrawableBinding>() {
 
     @RequiresApi(Build.VERSION_CODES.N)

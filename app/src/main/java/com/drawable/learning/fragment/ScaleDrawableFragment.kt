@@ -1,12 +1,16 @@
-package com.drawable.learning
+package com.drawable.learning.fragment
 
 import android.graphics.drawable.ScaleDrawable
 import android.util.Log
 import android.view.Gravity
 import android.widget.SeekBar
 import androidx.core.content.ContextCompat
+import com.drawable.learning.R
 import com.drawable.learning.databinding.FragmentScaleDrawableBinding
 
+/**
+ * @author jere
+ */
 class ScaleDrawableFragment : BaseFragment<FragmentScaleDrawableBinding>() {
 
     override fun initView() {

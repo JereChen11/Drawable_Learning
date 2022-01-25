@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StateListDrawableFragment">
+    tools:context=".fragment.StateListDrawableFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -25,7 +25,7 @@
 
     <TextView
         android:id="@+id/stateListDrawableTv"
-        style="@style/MyStyle"
+        style="@style/CustomTvStyle"
         android:background="@drawable/state_list_drawble"
         android:enabled="true"
         android:text="@string/state_list_drawable"
@@ -46,7 +46,7 @@
 
     <TextView
         android:id="@+id/stateListDrawableTv2"
-        style="@style/MyStyle"
+        style="@style/CustomTvStyle"
         android:enabled="true"
         android:text="@string/state_list_drawable"
         app:layout_constraintBottom_toBottomOf="parent"

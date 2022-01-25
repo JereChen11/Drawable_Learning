@@ -1,4 +1,4 @@
-package com.drawable.learning.custom.ball
+package com.drawable.learning.fragment.custom.ball
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
@@ -12,8 +12,11 @@ import android.view.Gravity
 import android.view.MotionEvent
 import android.widget.FrameLayout
 import android.widget.ImageView
-import com.drawable.learning.px
+import com.drawable.learning.tools.px
 
+/**
+ * @author jere
+ */
 class SiteFrameLayout(context: Context, attributeSet: AttributeSet?, defStyleAttr: Int) :
     FrameLayout(context, attributeSet, defStyleAttr) {
 

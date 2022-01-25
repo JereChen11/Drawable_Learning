@@ -1,10 +1,14 @@
-package com.drawable.learning
+package com.drawable.learning.fragment
 
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
 import androidx.core.content.ContextCompat
+import com.drawable.learning.R
 import com.drawable.learning.databinding.FragmentBitmapDrawableBinding
 
+/**
+ * @author jere
+ */
 class BitmapDrawableFragment : BaseFragment<FragmentBitmapDrawableBinding>() {
 
     override fun initView() {

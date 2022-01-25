@@ -1,11 +1,15 @@
-package com.drawable.learning
+package com.drawable.learning.fragment
 
 import android.graphics.drawable.StateListDrawable
 import android.util.Log
 import android.util.StateSet
 import androidx.core.content.ContextCompat
+import com.drawable.learning.R
 import com.drawable.learning.databinding.FragmentStateListDrawableBinding
 
+/**
+ * @author jere
+ */
 class StateListDrawableFragment : BaseFragment<FragmentStateListDrawableBinding>() {
 
     override fun initView() {

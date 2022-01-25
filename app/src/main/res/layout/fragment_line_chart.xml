@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".custom.line_chart.LineChartFragment">
+    tools:context=".fragment.custom.line_chart.LineChartFragment">
 
     <TextView
         android:id="@+id/customDrawableTv"

@@ -1,12 +1,17 @@
-package com.drawable.learning
+package com.drawable.learning.fragment
 
 import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.LayerDrawable
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
+import com.drawable.learning.R
 import com.drawable.learning.databinding.FragmentLayerDrawableBinding
+import com.drawable.learning.tools.px
 
+/**
+ * @author jere
+ */
 class LayerDrawableFragment : BaseFragment<FragmentLayerDrawableBinding>() {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun initView() {

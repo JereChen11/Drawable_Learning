@@ -1,4 +1,4 @@
-package com.drawable.learning
+package com.drawable.learning.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import java.lang.reflect.ParameterizedType
 
+/**
+ * @author jere
+ */
 abstract class BaseFragment<B : ViewBinding> : Fragment() {
 
     private var _binding: B? = null

@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.drawable.learning.custom.ball.MoveBallFragment
-import com.drawable.learning.custom.line_chart.LineChartFragment
+import com.drawable.learning.fragment.custom.ball.MoveBallFragment
+import com.drawable.learning.fragment.custom.line_chart.LineChartFragment
 import com.drawable.learning.databinding.ActivityMainBinding
+import com.drawable.learning.fragment.*
 import com.google.android.material.tabs.TabLayoutMediator
 
+/**
+ * @author jere
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

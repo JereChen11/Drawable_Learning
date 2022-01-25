@@ -1,9 +1,13 @@
-package com.drawable.learning
+package com.drawable.learning.fragment
 
 import android.graphics.drawable.AnimationDrawable
 import androidx.core.content.ContextCompat
+import com.drawable.learning.R
 import com.drawable.learning.databinding.FragmentAnimationDrawableBinding
 
+/**
+ * @author jere
+ */
 class AnimationDrawableFragment : BaseFragment<FragmentAnimationDrawableBinding>() {
     private val animationDrawable by lazy {
         ContextCompat.getDrawable(context!!, R.drawable.animation_drawable) as AnimationDrawable

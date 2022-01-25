@@ -1,6 +1,6 @@
-package com.drawable.learning.custom.ball
+package com.drawable.learning.fragment.custom.ball
 
-import com.drawable.learning.BaseFragment
+import com.drawable.learning.fragment.BaseFragment
 import com.drawable.learning.databinding.FragmentMoveBallBinding
 
 /**
