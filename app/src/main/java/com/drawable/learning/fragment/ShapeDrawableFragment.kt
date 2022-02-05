@@ -20,7 +20,7 @@ class ShapeDrawableFragment : BaseFragment<FragmentShapeDrawableBinding>() {
     override fun initView() {
         binding.shapeDrawableInclude.apply {
             tv1.setText(R.string.shape_drawable)
-            tv1.background = ContextCompat.getDrawable(context!!, R.drawable.shape_drawable)
+            tv1.background = ContextCompat.getDrawable(requireContext(), R.drawable.shape_drawable)
             tv2.setText(R.string.shape_drawable)
 
             val roundRectShape =

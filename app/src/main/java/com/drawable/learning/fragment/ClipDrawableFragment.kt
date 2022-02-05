@@ -14,11 +14,11 @@ import com.drawable.learning.databinding.FragmentClipDrawableBinding
 class ClipDrawableFragment : BaseFragment<FragmentClipDrawableBinding>() {
 
     private val clipDrawable by lazy {
-        ContextCompat.getDrawable(context!!, R.drawable.clip_drawable)
+        ContextCompat.getDrawable(requireContext(), R.drawable.clip_drawable)
     }
     private val manualClipDrawable by lazy {
         ClipDrawable(
-            ContextCompat.getDrawable(context!!, R.drawable.nick),
+            ContextCompat.getDrawable(requireContext(), R.drawable.nick),
             Gravity.CENTER,
             ClipDrawable.VERTICAL
         )

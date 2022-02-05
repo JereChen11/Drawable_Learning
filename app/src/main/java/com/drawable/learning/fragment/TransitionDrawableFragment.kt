@@ -17,13 +17,14 @@ class TransitionDrawableFragment : BaseFragment<FragmentTransitionDrawableBindin
     override fun initView() {
         binding.transitionDrawableInclude.apply {
             tv1.setText(R.string.transition_drawable)
-            tv1.background = ContextCompat.getDrawable(context!!, R.drawable.transition_drawable)
+            tv1.background =
+                ContextCompat.getDrawable(requireContext(), R.drawable.transition_drawable)
             tv2.setText(R.string.transition_drawable)
 
             bgDrawable = tv1.background as TransitionDrawable
             val drawableArray = arrayOf(
-                ContextCompat.getDrawable(context!!, R.drawable.nick),
-                ContextCompat.getDrawable(context!!, R.drawable.basketball)
+                ContextCompat.getDrawable(requireContext(), R.drawable.nick),
+                ContextCompat.getDrawable(requireContext(), R.drawable.basketball)
             )
             manualDrawable = TransitionDrawable(drawableArray)
             tv2.background = manualDrawable

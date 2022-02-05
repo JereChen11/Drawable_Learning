@@ -22,9 +22,9 @@ class StateListDrawableFragment : BaseFragment<FragmentStateListDrawableBinding>
         val sld = StateListDrawable().apply {
             addState(
                 intArrayOf(android.R.attr.state_pressed),
-                ContextCompat.getDrawable(context!!, R.drawable.basketball)
+                ContextCompat.getDrawable(requireContext(), R.drawable.basketball)
             )
-            addState(StateSet.WILD_CARD, ContextCompat.getDrawable(context!!, R.drawable.nick))
+            addState(StateSet.WILD_CARD, ContextCompat.getDrawable(requireContext(), R.drawable.nick))
         }
         binding.stateListDrawableTv2.apply {
             background = sld

@@ -17,24 +17,24 @@ class LayerDrawableFragment : BaseFragment<FragmentLayerDrawableBinding>() {
     override fun initView() {
         binding.layerDrawableInclude.apply {
             tv1.setText(R.string.layer_drawable)
-            tv1.background = ContextCompat.getDrawable(context!!, R.drawable.layer_drawable)
+            tv1.background = ContextCompat.getDrawable(requireContext(), R.drawable.layer_drawable)
             tv2.setText(R.string.layer_drawable)
 
             val itemLeft = GradientDrawable().apply {
-                setColor(ContextCompat.getColor(context!!, R.color.royal_blue))
+                setColor(ContextCompat.getColor(requireContext(), R.color.royal_blue))
                 setSize(50.px, 50.px)
                 shape = GradientDrawable.OVAL
             }
             val itemCenter = GradientDrawable().apply {
-                setColor(ContextCompat.getColor(context!!, R.color.indian_red))
+                setColor(ContextCompat.getColor(requireContext(), R.color.indian_red))
                 shape = GradientDrawable.OVAL
             }
             val itemRight = GradientDrawable().apply {
-                setColor(ContextCompat.getColor(context!!, R.color.yellow))
+                setColor(ContextCompat.getColor(requireContext(), R.color.yellow))
                 shape = GradientDrawable.OVAL
             }
             val arr = arrayOf(
-                ContextCompat.getDrawable(context!!, R.drawable.nick)!!,
+                ContextCompat.getDrawable(requireContext(), R.drawable.nick)!!,
                 itemLeft,
                 itemCenter,
                 itemRight

@@ -18,7 +18,8 @@ class GradientDrawableFragment : BaseFragment<FragmentGradientDrawableBinding>()
     override fun initView() {
         binding.gradientDrawableInclude.apply {
             tv1.setText(R.string.gradient_drawable)
-            tv1.background = ContextCompat.getDrawable(context!!, R.drawable.gradient_drawable)
+            tv1.background =
+                ContextCompat.getDrawable(requireContext(), R.drawable.gradient_drawable)
             tv2.setText(R.string.gradient_drawable)
 
             val gradientDrawable = GradientDrawable().apply {

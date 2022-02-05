@@ -10,7 +10,10 @@ import com.drawable.learning.databinding.FragmentAnimationDrawableBinding
  */
 class AnimationDrawableFragment : BaseFragment<FragmentAnimationDrawableBinding>() {
     private val animationDrawable by lazy {
-        ContextCompat.getDrawable(context!!, R.drawable.animation_drawable) as AnimationDrawable
+        ContextCompat.getDrawable(
+            requireContext(),
+            R.drawable.animation_drawable
+        ) as AnimationDrawable
     }
 
     override fun initView() {
@@ -22,8 +25,9 @@ class AnimationDrawableFragment : BaseFragment<FragmentAnimationDrawableBinding>
             animationDrawable.start()
 
             val animationDrawable = AnimationDrawable().apply {
-                ContextCompat.getDrawable(context!!, R.drawable.nick)?.let { addFrame(it, 1000) }
-                ContextCompat.getDrawable(context!!, R.drawable.basketball)
+                ContextCompat.getDrawable(requireContext(), R.drawable.nick)
+                    ?.let { addFrame(it, 1000) }
+                ContextCompat.getDrawable(requireContext(), R.drawable.basketball)
                     ?.let { addFrame(it, 1000) }
             }
             tv2.background = animationDrawable

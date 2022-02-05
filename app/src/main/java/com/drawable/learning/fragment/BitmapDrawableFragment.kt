@@ -14,7 +14,7 @@ class BitmapDrawableFragment : BaseFragment<FragmentBitmapDrawableBinding>() {
     override fun initView() {
         binding.bitmapDrawableInclude.apply {
             tv1.setText(R.string.bitmap_drawable)
-            tv1.background = ContextCompat.getDrawable(context!!, R.drawable.bitmap_drawable)
+            tv1.background = ContextCompat.getDrawable(requireContext(), R.drawable.bitmap_drawable)
             tv2.setText(R.string.bitmap_drawable)
 
             val bitmap = BitmapFactory.decodeResource(resources, R.drawable.nick)

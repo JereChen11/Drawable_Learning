@@ -1,5 +1,6 @@
 package com.drawable.learning.fragment
 
+import android.graphics.drawable.Drawable
 import android.graphics.drawable.LevelListDrawable
 import android.util.Log
 import android.widget.SeekBar
@@ -14,45 +15,36 @@ class LevelListDrawableFragment : BaseFragment<FragmentLevelListDrawableBinding>
 
     private val lld by lazy {
         LevelListDrawable().apply {
-            addLevel(0, 1, ContextCompat.getDrawable(context!!, R.drawable.nick))
-            addLevel(0, 2, ContextCompat.getDrawable(context!!, R.drawable.tom1))
-            addLevel(0, 3, ContextCompat.getDrawable(context!!, R.drawable.tom2))
-            addLevel(0, 4, ContextCompat.getDrawable(context!!, R.drawable.tom3))
-            addLevel(0, 5, ContextCompat.getDrawable(context!!, R.drawable.tom4))
-            addLevel(0, 6, ContextCompat.getDrawable(context!!, R.drawable.tom5))
-            addLevel(0, 7, ContextCompat.getDrawable(context!!, R.drawable.tom6))
-            addLevel(0, 8, ContextCompat.getDrawable(context!!, R.drawable.tom7))
-            addLevel(0, 9, ContextCompat.getDrawable(context!!, R.drawable.tom8))
-            addLevel(0, 10, ContextCompat.getDrawable(context!!, R.drawable.tom9))
+            addLevel(0, 1, getDrawable(R.drawable.nick))
+            addLevel(0, 2, getDrawable(R.drawable.tom1))
+            addLevel(0, 3, getDrawable(R.drawable.tom2))
+            addLevel(0, 4, getDrawable(R.drawable.tom3))
+            addLevel(0, 5, getDrawable(R.drawable.tom4))
+            addLevel(0, 6, getDrawable(R.drawable.tom5))
+            addLevel(0, 7, getDrawable(R.drawable.tom6))
+            addLevel(0, 8, getDrawable(R.drawable.tom7))
+            addLevel(0, 9, getDrawable(R.drawable.tom8))
+            addLevel(0, 10, getDrawable(R.drawable.tom9))
         }
     }
+
+    private fun getDrawable(id: Int): Drawable {
+        return (ContextCompat.getDrawable(requireContext(), id)
+            ?: ContextCompat.getDrawable(requireContext(), R.drawable.nick)) as Drawable
+    }
+
     private val levelListDrawable by lazy {
-        ContextCompat.getDrawable(context!!, R.drawable.level_list_drawable)
+        ContextCompat.getDrawable(requireContext(), R.drawable.level_list_drawable)
     }
 
     override fun initView() {
-//        val lld = LevelListDrawable().apply {
-//            addLevel(0, 1, ContextCompat.getDrawable(context!!, R.drawable.nick))
-//            addLevel(0, 2, ContextCompat.getDrawable(context!!, R.drawable.tom1))
-//            addLevel(0, 3, ContextCompat.getDrawable(context!!, R.drawable.tom2))
-//            addLevel(0, 4, ContextCompat.getDrawable(context!!, R.drawable.tom3))
-//            addLevel(0, 5, ContextCompat.getDrawable(context!!, R.drawable.tom4))
-//            addLevel(0, 6, ContextCompat.getDrawable(context!!, R.drawable.tom5))
-//            addLevel(0, 7, ContextCompat.getDrawable(context!!, R.drawable.tom6))
-//            addLevel(0, 8, ContextCompat.getDrawable(context!!, R.drawable.tom7))
-//            addLevel(0, 9, ContextCompat.getDrawable(context!!, R.drawable.tom8))
-//            addLevel(0, 10, ContextCompat.getDrawable(context!!, R.drawable.tom9))
-//        }
 
         binding.levelListDrawableInclude.apply {
             tv1.setText(R.string.level_list_drawable)
-//            tv1.background = ContextCompat.getDrawable(context!!, R.drawable.level_list_drawable)
             tv1.background = levelListDrawable
             tv2.setText(R.string.level_list_drawable)
 
             tv2.background = lld
-
-//            val bgDrawable = tv1.background as LevelListDrawable
         }
 
         binding.seekBar.apply {

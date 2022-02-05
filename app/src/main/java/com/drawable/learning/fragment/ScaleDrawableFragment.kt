@@ -16,11 +16,11 @@ class ScaleDrawableFragment : BaseFragment<FragmentScaleDrawableBinding>() {
     override fun initView() {
         binding.scaleDrawableInclude.apply {
             tv1.setText(R.string.scale_drawable)
-            tv1.background = ContextCompat.getDrawable(context!!, R.drawable.scale_drawable)
+            tv1.background = ContextCompat.getDrawable(requireContext(), R.drawable.scale_drawable)
             tv2.setText(R.string.scale_drawable)
 
             val scaleDrawable = ScaleDrawable(
-                context?.let { ContextCompat.getDrawable(it, R.drawable.nick) },
+                ContextCompat.getDrawable(requireContext(), R.drawable.nick),
                 Gravity.CENTER,
                 1f,
                 1f
