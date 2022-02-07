@@ -17,7 +17,7 @@ import com.drawable.learning.tools.px
 /**
  * @author jere
  */
-class SiteFrameLayout(context: Context, attributeSet: AttributeSet?, defStyleAttr: Int) :
+class CustomBallMovingSiteView(context: Context, attributeSet: AttributeSet?, defStyleAttr: Int) :
     FrameLayout(context, attributeSet, defStyleAttr) {
 
     constructor(context: Context) : this(context, null, 0)
@@ -50,7 +50,7 @@ class SiteFrameLayout(context: Context, attributeSet: AttributeSet?, defStyleAtt
     }
 
     private fun initView(context: Context, attributeSet: AttributeSet?) {
-
+        //generate a ball by dynamic
         ballContainerIv = ImageView(context).apply {
             layoutParams = LayoutParams(radius * 2, radius * 2).apply {
                 gravity = Gravity.CENTER

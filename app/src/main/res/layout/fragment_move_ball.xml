@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".fragment.custom.ball.MoveBallFragment">
 
-    <com.drawable.learning.fragment.custom.ball.SiteFrameLayout
+    <com.drawable.learning.fragment.custom.ball.CustomBallMovingSiteView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
