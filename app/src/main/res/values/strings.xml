@@ -17,10 +17,13 @@
     <string name="clip_drawable">ClipDrawable</string>
     <string name="custom_drawable_1">Custom Drawable 1</string>
     <string name="custom_drawable_2">Custom Drawable 2</string>
+    <string name="custom_highlight_view">Custom Highlight View</string>
     <string name="line_chart">Line Chart</string>
 
     <string name="try_click_screen">please try to click the screen \n you will see the moving ball</string>
 
     <string name="click_the_image">Click the image to see the effect</string>
+
+    <string name="please_note">Please note! Pay attention to this content.</string>
 
 </resources>

@@ -9,6 +9,7 @@ import com.drawable.learning.fragment.custom.ball.MoveBallFragment
 import com.drawable.learning.fragment.custom.line_chart.LineChartFragment
 import com.drawable.learning.databinding.ActivityMainBinding
 import com.drawable.learning.fragment.*
+import com.drawable.learning.fragment.custom.stroke.HighlightAnimFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
 /**
@@ -32,7 +33,8 @@ class MainActivity : AppCompatActivity() {
             getString(R.string.animation_drawable),
             getString(R.string.animated_vector_drawable),
             getString(R.string.custom_drawable_1),
-            getString(R.string.custom_drawable_2)
+            getString(R.string.custom_drawable_2),
+            getString(R.string.custom_highlight_view)
         )
     }
 
@@ -76,6 +78,7 @@ class MainActivity : AppCompatActivity() {
                     getString(R.string.animation_drawable) -> AnimationDrawableFragment()
                     getString(R.string.animated_vector_drawable) -> AnimatedVectorDrawableFragment()
                     getString(R.string.custom_drawable_1) -> LineChartFragment()
+                    getString(R.string.custom_highlight_view) -> HighlightAnimFragment()
                     else -> MoveBallFragment()
                 }
             }
