@@ -17,21 +17,23 @@ class BgGridDrawable : Drawable() {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
         strokeWidth = 1f.px
-        color = Color.parseColor("#B5B5B5")
-        pathEffect = DashPathEffect(floatArrayOf(10f.px, 5f.px), 0f)
+        color = Color.parseColor("#80B5B5B5")
+        pathEffect = DashPathEffect(floatArrayOf(5f.px, 5f.px, 5f.px, 5f.px), 0f)
     }
 
+    private var pixelX = 0f
+    private var pixelY = 0f
     override fun draw(canvas: Canvas) {
         for (i in 0 until lineCount) {
-            val y = (bounds.top + bounds.height() / lineCount * i).toFloat()
-            path.moveTo(bounds.left.toFloat(), y)
-            path.lineTo(bounds.right.toFloat(), y)
+            pixelY = (bounds.top + bounds.height() / lineCount * i).toFloat()
+            path.moveTo(bounds.left.toFloat(), pixelY)
+            path.lineTo(bounds.right.toFloat(), pixelY)
             canvas.drawPath(path, paint)
         }
         for (i in 0 until columnCount) {
-            val x = (bounds.left + bounds.width() / columnCount * i).toFloat()
-            path.moveTo(x, bounds.top.toFloat())
-            path.lineTo(x, bounds.bottom.toFloat())
+            pixelX = (bounds.left + bounds.width() / columnCount * i).toFloat()
+            path.moveTo(pixelX, bounds.top.toFloat())
+            path.lineTo(pixelX, bounds.bottom.toFloat())
             canvas.drawPath(path, paint)
         }
     }

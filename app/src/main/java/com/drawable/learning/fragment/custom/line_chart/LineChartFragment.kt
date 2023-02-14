@@ -22,12 +22,46 @@ class LineChartFragment : BaseFragment<FragmentLineChartBinding>() {
         private val bgDrawable = BgGridDrawable()
 
         private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            style = Paint.Style.FILL
+            style = Paint.Style.FILL_AND_STROKE
+            strokeWidth = 2f.px
             color = Color.parseColor("#96CDCD")
+        }
+
+        //hard code the points of the line chart
+        private val path = Path()
+
+        private fun calculatePath() {
+            path.apply {
+                reset()
+                moveTo(bounds.left.toFloat(), bounds.bottom.toFloat())
+                lineTo(bounds.left.toFloat(), 150f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.05f, 200f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.1f, 130f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.15f, 250f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.2f, 80f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.25f, 220f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.3f, 200f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.35f, 30f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.4f, 240f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.45f, 260f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.5f, 160f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.55f, 100f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.6f, 80f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.65f, 20f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.7f, 150f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.75f, 170f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.8f, 320f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.85f, 220f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.9f, 300f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 0.95f, 120f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 1f, 360f)
+                lineTo(bounds.left.toFloat() + bounds.width() * 1f, bounds.bottom.toFloat())
+            }
         }
 
         override fun draw(canvas: Canvas) {
             paint.shader = null
+            calculatePath()
 
             canvas.drawRect(
                 bounds.left.toFloat(),
@@ -40,34 +74,13 @@ class LineChartFragment : BaseFragment<FragmentLineChartBinding>() {
             bgDrawable.bounds = bounds
             bgDrawable.draw(canvas)
 
-            //hard code the points of the line chart
-            val path = Path().apply {
-                moveTo(bounds.left.toFloat(), bounds.bottom.toFloat())
-                lineTo(bounds.left.toFloat(), 150f)
-                lineTo(10f, 200f)
-                lineTo(50f, 130f)
-                lineTo(90f, 250f)
-                lineTo(110f, 180f)
-                lineTo(170f, 220f)
-                lineTo(181f, 200f)
-                lineTo(195f, 130f)
-                lineTo(250f, 240f)
-                lineTo(290f, 260f)
-                lineTo(300f, 160f)
-                lineTo(360f, 300f)
-                lineTo(400f, 280f)
-                lineTo(440f, 200f)
-                lineTo(490f, 150f)
-                lineTo(530f, 170f)
-                lineTo(bounds.right.toFloat(), 320f)
-                lineTo(bounds.right.toFloat(), bounds.bottom.toFloat())
-            }
-            paint.apply {
-                style = Paint.Style.STROKE
-                strokeWidth = 2f.px
-                color = Color.WHITE
-            }
-            canvas.drawPath(path, paint)
+
+//            paint.apply {
+//                style = Paint.Style.STROKE
+//                strokeWidth = 2f.px
+//                color = Color.WHITE
+//            }
+//            canvas.drawPath(path, paint)
 
             //draw the shader for path
             path.close()
