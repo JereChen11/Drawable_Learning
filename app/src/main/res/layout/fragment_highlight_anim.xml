@@ -49,4 +49,13 @@
         app:layout_constraintStart_toStartOf="@id/noteNickIv"
         app:layout_constraintTop_toTopOf="@id/noteNickIv" />
 
+    <ImageView
+        android:id="@+id/testIv"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="50dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
