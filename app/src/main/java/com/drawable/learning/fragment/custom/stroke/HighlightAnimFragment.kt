@@ -20,6 +20,10 @@ class HighlightAnimFragment : BaseFragment<FragmentHighlightAnimBinding>() {
             (intArray[1] + 100f.px).toInt()
         )
         binding.testIv.background = bubbleChatRectDrawable
+
+        lifecycle.addObserver(binding.noteSav)
+        lifecycle.addObserver(binding.sav)
+
     }
 
 }

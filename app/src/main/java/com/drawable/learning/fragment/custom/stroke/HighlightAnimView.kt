@@ -4,12 +4,16 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
+import android.util.Log
+import android.view.View
 import android.view.animation.LinearInterpolator
-import android.widget.FrameLayout
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import com.drawable.learning.tools.px
 
 class HighlightAnimView(context: Context, attributeSet: AttributeSet?, defStyleAttr: Int) :
-    FrameLayout(context, attributeSet, defStyleAttr) {
+    View(context, attributeSet, defStyleAttr), DefaultLifecycleObserver {
+    private val TAG = "HighlightAnimView"
 
     constructor(context: Context) : this(context, null, 0)
     constructor(context: Context, attributeSet: AttributeSet?) : this(context, attributeSet, 0)
@@ -25,15 +29,45 @@ class HighlightAnimView(context: Context, attributeSet: AttributeSet?, defStyleA
             addUpdateListener {
                 it.animatedValue.toString().toFloat().let { valuePercent ->
                     percent = valuePercent
+//                    Log.e(TAG, "percent = $percent: ")
                 }
-                invalidate()
+                postInvalidate()
             }
-            start()
         }
 
-    init {
-        realValueAnimator.start()
+    private fun startAnim() {
+        Log.e(TAG, "startAnim: realValueAnimator.isRunning = ${realValueAnimator.isRunning}")
+        if (!realValueAnimator.isRunning) {
+            realValueAnimator.start()
+        }
     }
+
+    private fun stopAnim() {
+        Log.e(TAG, "stopAnim: realValueAnimator.isRunning = ${realValueAnimator.isRunning}")
+        if (realValueAnimator.isRunning) {
+            realValueAnimator.cancel()
+        }
+
+    }
+
+    override fun onResume(owner: LifecycleOwner) {
+        super.onResume(owner)
+        Log.e(TAG, "onResume: ")
+        startAnim()
+    }
+
+    override fun onPause(owner: LifecycleOwner) {
+        super.onPause(owner)
+        Log.e(TAG, "onPause: ")
+        stopAnim()
+    }
+
+    override fun onStop(owner: LifecycleOwner) {
+        super.onStop(owner)
+        Log.e(TAG, "onStop: ")
+        stopAnim()
+    }
+
 
     private val dashPathEffect by lazy {
         DashPathEffect(floatArrayOf(5f.px, 5f.px, 5f.px, 5f.px), 1f)
